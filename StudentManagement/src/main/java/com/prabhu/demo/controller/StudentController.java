@@ -37,7 +37,6 @@ public class StudentController {
 	}
 
 	// update
-
 	@PutMapping("/student/{studentId}")
 	Student updateStudent(@PathVariable(name = "studentId") Long sId, @RequestBody Student nStud) {
 		return studentRepo.findById(sId).map(s -> {
