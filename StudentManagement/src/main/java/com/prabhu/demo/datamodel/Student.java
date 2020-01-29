@@ -28,7 +28,7 @@ public class Student {
 
 	}
 
-	public Student(String firstName, String lastName, Date dob, Contact contact, List<Course> courses) {		
+	public Student(String firstName, String lastName, Date dob, Contact contact, List<Course> courses) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dob = dob;

@@ -9,11 +9,11 @@ import javax.persistence.Id;
 @Entity
 public class Course {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String name;
-	
+
 	private String category;
 
 	public Long getId() {
@@ -24,7 +24,7 @@ public class Course {
 		this.id = id;
 	}
 
-	@Column(unique = true,nullable = false)
+	@Column(unique = true, nullable = false)
 	public String getName() {
 		return name;
 	}
@@ -40,8 +40,5 @@ public class Course {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	
-	
 
 }

@@ -1,7 +1,6 @@
 package com.prabhu.demo.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,14 +37,14 @@ public class StudentController {
 
 	// update
 	@PutMapping("/student/{studentId}")
-	Student updateStudent(@PathVariable(name = "studentId") Long sId, @RequestBody Student nStud) {
+	Student updateStudent(@PathVariable(name = "studentId") Long sId, @RequestBody Student oldStudent) {
 		return studentRepo.findById(sId).map(s -> {
-			s.setFirstName(nStud.getFirstName());
-			s.setLastName(nStud.getLastName());
-			s.setContact(nStud.getContact());
-			s.setDob(nStud.getDob());
-			s.setCourses(nStud.getCourses());
+			s.setFirstName(oldStudent.getFirstName());
+			s.setLastName(oldStudent.getLastName());
+			s.setContact(oldStudent.getContact());
+			s.setDob(oldStudent.getDob());
+			s.setCourses(oldStudent.getCourses());
 			return studentRepo.save(s);
-		}).orElseThrow(() -> new ResourceNotFoundException("No student found for " + nStud.getId()));
+		}).orElseThrow(() -> new ResourceNotFoundException("No student found for " + oldStudent.getId()));
 	}
 }
